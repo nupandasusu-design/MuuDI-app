@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Prompt:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'IBM Plex Sans Thai', 'Prompt', sans-serif;
+    background-color: #E9E4F2;
+    color: #18181B;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Prompt', 'IBM Plex Sans Thai', sans-serif;
+  }
+}
+
+.font-mono-receipt {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ซ่อนแถบ Scrollbar แนวนอนให้ดูเหมือนแอปมือถือ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ขอบหยักใบเสร็จด้านบนและด้านล่าง */
+.receipt-edge-top {
+  background: radial-gradient(circle at 10px 0, transparent 6px, #FAF8F5 6.5px);
+  background-size: 20px 10px;
+}
+
+.receipt-edge-bottom {
+  background: radial-gradient(circle at 10px 10px, transparent 6px, #FAF8F5 6.5px);
+  background-size: 20px 10px;
+}
+
+/* แอนิเมชันลอยหายใจของมาสคอต Chibi */
+@keyframes floatCompanion {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.5deg);
+  }
+}
+
+.animate-companion {
+  animation: floatCompanion 3.2s ease-in-out infinite;
+}
+
+/* แอนิเมชันแสดงหน้าจอแบบนุ่มนวล */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* แอนิเมชันปรินต์ใบกำกับดวง */
+@keyframes printSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-print-receipt {
+  animation: printSlide 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* คลาสสำหรับการ์ดเปิดไพ่พลังใจ 3D (ฟีเจอร์ที่ 2) */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
